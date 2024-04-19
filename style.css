@@ -1,0 +1,45 @@
+.navbar{
+    height: 12vh; 
+    width: 100%; 
+    background-color: rgb(94, 4, 31); 
+    position: absolute; 
+    padding: 25px; 
+    display: flex; 
+    justify-content: space-between; 
+    box-sizing: border-box;
+    align-items: center;
+  }
+  
+  
+#titre{
+    color: white; 
+    text-decoration: none; 
+    font-size: 1.5em; 
+    font-style: italic; 
+}
+
+.navbar .nav-links ul{
+    display: flex; 
+  }
+
+.navbar .nav-links ul li{
+    margin: 0 20px; 
+    color: rgb(122, 121, 121); 
+  }
+
+.onglet{
+    text-decoration: none; 
+    color: white; 
+  }
+
+.equipes{
+    border: solid; 
+    padding: 80px; 
+    margin: 15px; 
+}
+
+.resultats, .classement{
+    border: dashed; 
+    margin: 15px; 
+}
+
