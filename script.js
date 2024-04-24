@@ -1,9 +1,10 @@
 function ajoutEquipe() {
     let ul = document.getElementById("list-equipes");
+    let nombreEquipes = ul.getElementsByTagName("li").length
     let li = document.createElement("li");
     let inputName = document.getElementById('team-name');
     let nomEquipe = inputName.value
-    if(nomEquipe != "")
+    if(nomEquipe != "" && nombreEquipes <15)
     {
       li.appendChild(document.createTextNode(nomEquipe));
       ul.appendChild(li);
