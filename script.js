@@ -52,8 +52,8 @@ function creerPoules(){
         alert("ajoutez d'autres équipes"); 
     } 
     else{
-     let shuffleArray = shuffleArray(array);
-     let arrayCoupe = chunkArray(shuffleArray, shuffleArray.length/3);
+     let shuffledArray = shuffleArray(array);
+     let arrayCoupe = chunkArray(shuffledArray, shuffledArray.length/3);
      console.log(arrayCoupe); 
     }
 }
