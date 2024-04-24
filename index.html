@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css"/>
+    <script src="script.js"></script>
 </head>
 <body>
     <nav class="navbar">
@@ -22,15 +23,19 @@
         <h2>Les équipes</h2>
         <div>
           <p>Entrez ci-dessous le nom des équipes les uns après les autres : </p>
-        <form>
           <input type="text" id="team-name" placeholder="nom d'équipe"maxlength="15">
-          <input type="submit" value="ok">
-        </form>
-          <ul>
-            <li>bhj</li>
-            <li></li>
-            <li></li>
+          <button onclick="ajoutEquipe()">ok</button>
+          <ul id="list-equipes">
           </ul>
+        </div>
+        <div>
+          <p>Une fois toutes les équipes ajoutées, cliquez ci-dessous pour créer aléatoirement les poules :</p>
+          <button>Créer les poules</button>
+        </div>
+        <div>
+          <div id="poule1">Poule 1</div>
+          <div id="poule2">Poule 2</div>
+          <div id="poule3">Poule 3</div>
         </div>
     </div>
     <div class="resultats">
