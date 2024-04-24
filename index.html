@@ -21,13 +21,13 @@
 
     <div class="equipes">
         <h2>Les équipes</h2>
-        <div>
+        <form action="javascript:ajoutEquipe()">
           <p>Entrez ci-dessous le nom des équipes les uns après les autres : </p>
           <input type="text" id="team-name" placeholder="nom d'équipe"maxlength="15">
-          <button onclick="ajoutEquipe()">ok</button>
+          <input type="submit" value="Ok">
           <ul id="list-equipes">
           </ul>
-        </div>
+        </form>
         <div>
           <p>Une fois toutes les équipes ajoutées, cliquez ci-dessous pour créer aléatoirement les poules :</p>
           <button>Créer les poules</button>
