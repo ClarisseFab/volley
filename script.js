@@ -1,14 +1,7 @@
 function ajoutEquipe() {
-    let ul = document.getElementById("list-equipes");
-    let nombreEquipes = ul.getElementsByTagName("li").length
-    let li = document.createElement("li");
     let inputName = document.getElementById('team-name');
     let nomEquipe = inputName.value
-    if(nomEquipe != "" && nombreEquipes <15)
-    {
-      li.appendChild(document.createTextNode(nomEquipe));
-      ul.appendChild(li);
-    }
+    ajouterLiEquipe(nomEquipe);
     inputName.value = ""; 
     inputName.focus();
   }
@@ -35,7 +28,7 @@ function chunkArray(myArray, chunk_size){
         tempArray.push(myChunk);
     }
 
-    return tempArray;
+    return tempArray.reverse();
 }
 
 function shuffleArray(array){
@@ -86,14 +79,23 @@ function creerPoules(){
 
 function test(){
   document.getElementById("list-equipes").innerHTML = "";
-  const toutesLesEquipes = ["Polo", "p'tit Sherlock", "Polo le ptit homme de ménage", "Polo le ptit chef", "polochon", "Polo apprend à bloquer", "Polo a mal au dos", "Poli", "Polo le ptit mique", "Clacla la grande volleyeuse", "Asul 5", "Asul 2", "les zippeuses", "Asul 16", "Fred" ]
+  const toutesLesEquipes = ["Polo", "P'tit Sherlock", "Polo le ptit homme de ménage", "Polo le ptit chef", "Polochon", "Polo apprend à bloquer", "Polo a mal au dos", "Poli", "Polo le ptit mique", "Clacla la GRANDE volleyeuse", "Asul 5", "Asul 2", "Les zippeuses", "Asul 16", "Fred" ]
   let n = Math.floor(Math.random() * (15 - 9 + 1) + 9); 
   shuffleArray(toutesLesEquipes); 
   equipesSelectionnees = toutesLesEquipes.slice(0,n); 
-  let ul = document.getElementById("list-equipes");
-  equipesSelectionnees.forEach(element => {
-    let li = document.createElement("li");
-    li.appendChild(document.createTextNode(element));
-    ul.appendChild(li);
+  equipesSelectionnees.forEach(nomEquipe => {
+    ajouterLiEquipe(nomEquipe); 
   });
+}
+
+function ajouterLiEquipe(nomEquipe){
+  let ul = document.getElementById("list-equipes");  
+  let nombreEquipes = ul.getElementsByTagName("li").length;
+  if(nomEquipe != "" && nombreEquipes <15)
+  {
+    let li = document.createElement("li");
+    li.setAttribute("contentEditable", true); 
+    li.appendChild(document.createTextNode(nomEquipe));
+    ul.appendChild(li);
+  }
 }
