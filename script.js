@@ -84,3 +84,16 @@ function creerPoules(){
   }
 }
 
+function test(){
+  document.getElementById("list-equipes").innerHTML = "";
+  const toutesLesEquipes = ["Polo", "p'tit Sherlock", "Polo le ptit homme de ménage", "Polo le ptit chef", "polochon", "Polo apprend à bloquer", "Polo a mal au dos", "Poli", "Polo le ptit mique", "Clacla la grande volleyeuse", "Asul 5", "Asul 2", "les zippeuses", "Asul 16", "Fred" ]
+  let n = Math.floor(Math.random() * (15 - 9 + 1) + 9); 
+  shuffleArray(toutesLesEquipes); 
+  equipesSelectionnees = toutesLesEquipes.slice(0,n); 
+  let ul = document.getElementById("list-equipes");
+  equipesSelectionnees.forEach(element => {
+    let li = document.createElement("li");
+    li.appendChild(document.createTextNode(element));
+    ul.appendChild(li);
+  });
+}
