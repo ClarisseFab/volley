@@ -6,6 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css"/>
     <script src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <nav class="navbar">
@@ -31,7 +32,8 @@
         </form>
         <div>
           <p>Une fois toutes les équipes ajoutées, cliquez ci-dessous pour créer aléatoirement les poules :</p>
-          <button onclick="creerPoules()">Créer les poules</button>
+          <button class="fa" onclick="creerPoules()" id="btn-poules">Créer les poules</button>
+          <button class="fa fa-unlock" id="reset" onclick="toggleVerrouillage()"></button>
         </div>
         <div>
           <h4>Poule 1</h4>

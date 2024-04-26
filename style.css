@@ -48,3 +48,8 @@ ul {
   grid-template-rows: repeat(5, min-content);
   grid-auto-flow: column;
 }
+
+li{
+  margin-right: 30px; 
+  padding: 3px; 
+}

@@ -6,7 +6,6 @@ function ajoutEquipe() {
     inputName.focus();
   }
 
-
   function recupererEquipes(){
   let listLi = document.getElementById("list-equipes").getElementsByTagName("li");
   let arrayEquipes = [];
@@ -15,7 +14,6 @@ function ajoutEquipe() {
   }
   return arrayEquipes;
 }
-
 
 function chunkArray(myArray, chunk_size){
     var index = 0;
@@ -38,8 +36,6 @@ function shuffleArray(array){
       } 
       return array;
 }
-
-
 
 function afficherPoules(array){
   array.forEach((element,index) => {
@@ -74,10 +70,38 @@ function creerPoules(){
     let arrayCoupe = chunkArray(shuffledArray, shuffledArray.length/3);
     console.log(arrayCoupe); 
     afficherPoules(arrayCoupe); 
+    lockPoules(); 
+  }
+}
+
+function lockPoules(){
+  let btnReset = document.getElementById("reset"); 
+  document.getElementById("btn-poules").setAttribute('disabled', '');
+  btnReset.classList.remove('fa-unlock'); 
+    btnReset.classList.add('fa-lock'); 
+}
+
+function unlockPoules(){
+  let btnReset = document.getElementById("reset"); 
+  document.getElementById("btn-poules").removeAttribute('disabled');
+  btnReset.classList.remove('fa-lock'); 
+    btnReset.classList.add('fa-unlock'); 
+}
+
+function toggleVerrouillage(){
+  let btnReset = document.getElementById("reset"); 
+  let isUnlocked = btnReset.classList.contains('fa-unlock');
+  if (isUnlocked){
+    lockPoules();  
+  }
+  else {
+    unlockPoules(); 
   }
 }
 
 function test(){
+  unlockPoules();
+  resetPoules();
   document.getElementById("list-equipes").innerHTML = "";
   const toutesLesEquipes = ["Polo", "P'tit Sherlock", "Polo le ptit homme de ménage", "Polo le ptit chef", "Polochon", "Polo apprend à bloquer", "Polo a mal au dos", "Poli", "Polo le ptit mique", "Clacla la GRANDE volleyeuse", "Asul 5", "Asul 2", "Les zippeuses", "Asul 16", "Fred" ]
   let n = Math.floor(Math.random() * (15 - 9 + 1) + 9); 
