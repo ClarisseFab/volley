@@ -46,16 +46,41 @@ function shuffleArray(array){
       return array;
 }
 
-function creerPoules(){
-    let array = recupererEquipes();
-    if (array.length<9){
-        alert("ajoutez d'autres équipes"); 
-    } 
-    else{
-     let shuffledArray = shuffleArray(array);
-     let arrayCoupe = chunkArray(shuffledArray, shuffledArray.length/3);
-     console.log(arrayCoupe); 
-    }
+
+
+function afficherPoules(array){
+  array.forEach((element,index) => {
+    let divPoule = document.getElementById(`poule${index+1}`);
+    let poule = document.createElement('ul');
+    for (let i = 0; i < element.length; i++) {
+      let item = document.createElement('li');
+      let nomEquipePoule = element[i]; 
+      // Set its contents:
+      item.appendChild(document.createTextNode(nomEquipePoule));
+      // Add it to the list:
+      poule.appendChild(item);
+      }
+    divPoule.appendChild(poule); 
+  });
 }
 
+function resetPoules(){
+  for (let i=1; i <=3; i++){
+    document.getElementById(`poule${i}`).innerHTML = "";
+  }
+}
+
+function creerPoules(){
+  resetPoules();
+  let array = recupererEquipes();
+  if (array.length<9){
+    alert("ajoutez d'autres équipes"); 
+  } 
+  else{
+    let shuffledArray = shuffleArray(array);
+    let arrayCoupe = chunkArray(shuffledArray, shuffledArray.length/3);
+    console.log(arrayCoupe); 
+    afficherPoules(arrayCoupe); 
+  }
+}
 
