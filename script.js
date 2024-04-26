@@ -60,8 +60,10 @@ function creerPoules(){
   else{
     let shuffledArray = shuffleArray(array);
     let arrayCoupe = chunkArray(shuffledArray, shuffledArray.length/3);
-    afficherPoule(arrayCoupe);    
+    afficherPoule(arrayCoupe); 
+    toggleVerrouillagePoules();   
   }
+  
 }
 
 function afficherPoule(listeEquipesParPoule){
@@ -81,6 +83,22 @@ function resetPoule(){
 for(let i=0; i<3; i++){
   document.getElementById(`ulPoule${i+1}`).innerHTML = "";
 }
+}
+
+function toggleVerrouillagePoules(){  
+  let boutonVerrouillage = document.getElementById("boutonVerrouillage");
+  let boutonPoules = document.getElementById("boutonPoules");
+  let verrouiller = boutonVerrouillage.classList.contains("fa-lock");
+  if(verrouiller){
+    boutonPoules.setAttribute("disabled","true");
+    boutonVerrouillage.classList.add("fa-unlock");
+    boutonVerrouillage.classList.remove("fa-lock");
+  }
+  else{
+    boutonPoules.removeAttribute("disabled");
+    boutonVerrouillage.classList.add("fa-lock");
+    boutonVerrouillage.classList.remove("fa-unlock");
+  }
 }
 
 function test(){
