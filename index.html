@@ -10,17 +10,17 @@
 </head>
 <body>
     <nav class="navbar">
-      <a href="Accueil.html" id="titre">Les volleyeurs du dimanche</a>
+      <a id="titre">Les volleyeurs du dimanche</a>
       <div class="nav-links">
         <ul>
-          <li><a href="" class="onglet">Les équipes</a></li>
-          <li><a href="" class="onglet">Résultats</a></li>
-          <li><a href="" class="onglet">Classement</a></li>
+          <li><a href="#equipes" class="onglet">Les équipes</a></li>
+          <li><a href="#resultats" class="onglet">Résultats</a></li>
+          <li><a href="#classement" class="onglet">Classement</a></li>
         </ul>
       </div>
     </nav>
 
-    <div class="equipes">
+    <div id="equipes">
         <h2>Les équipes</h2>
         <form action="javascript:ajoutEquipe()">
           <p>Entrez ci-dessous le nom des équipes les uns après les autres : </p>
@@ -30,12 +30,12 @@
           <ul id="list-equipes">
           </ul>
         </form>
-        <div>
+        <div id="btn-container">
           <p>Une fois toutes les équipes ajoutées, cliquez ci-dessous pour créer aléatoirement les poules :</p>
           <button class="fa" onclick="creerPoules()" id="btn-poules">Créer les poules</button>
           <button class="fa fa-unlock" id="reset" onclick="toggleVerrouillage()"></button>
         </div>
-        <div>
+        <div id="container">
           <h4>Poule 1</h4>
           <div id="poule1"></div>
           <h4>Poule 2</h4>
@@ -44,10 +44,10 @@
           <div id="poule3"></div>
         </div>
     </div>
-    <div class="resultats">
+    <div id="resultats">
         <h2>Résultats</h2>
     </div>
-    <div class="classement">
+    <div id="classement">
         <h2>Classement</h2>
     </div>
    
