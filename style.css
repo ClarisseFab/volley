@@ -79,10 +79,12 @@ li{
   margin-top: 20px; 
 }
 
-#poule1, #poule2, #poule3{
-  border: dashed; 
+#poule1, #poule2, #poule3, #poule4{
+  border: dashed;
+  border-color:rgb(94, 4, 31);  
 }
 
 h4{
   font-size: 1.3em; 
+  padding-left: 10px; 
 }

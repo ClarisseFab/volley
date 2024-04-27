@@ -22,7 +22,6 @@ function chunkArray(myArray, chunk_size){
     
     for (index = 0; index < arrayLength; index += chunk_size) {
         myChunk = myArray.slice(index, index+chunk_size);
-        // Do something if you want with the group
         tempArray.push(myChunk);
     }
 
@@ -54,7 +53,7 @@ function afficherPoules(array){
 }
 
 function resetPoules(){
-  for (let i=1; i <=3; i++){
+  for (let i=1; i <=4; i++){
     document.getElementById(`poule${i}`).innerHTML = "";
   }
 }
@@ -62,12 +61,12 @@ function resetPoules(){
 function creerPoules(){
   resetPoules();
   let array = recupererEquipes();
-  if (array.length<9){
-    alert("ajoutez d'autres équipes"); 
+  if (array.length<16){
+    alert("Merci d'ajouter d'autres équipes : le tournoi se fait avec 16 équipes !"); 
   } 
   else{
     let shuffledArray = shuffleArray(array);
-    let arrayCoupe = chunkArray(shuffledArray, shuffledArray.length/3);
+    let arrayCoupe = chunkArray(shuffledArray, shuffledArray.length/4);
     console.log(arrayCoupe); 
     afficherPoules(arrayCoupe); 
     lockPoules(); 
@@ -103,10 +102,9 @@ function test(){
   unlockPoules();
   resetPoules();
   document.getElementById("list-equipes").innerHTML = "";
-  const toutesLesEquipes = ["Polo", "P'tit Sherlock", "Polo le ptit homme de ménage", "Polo le ptit chef", "Polochon", "Polo apprend à bloquer", "Polo a mal au dos", "Poli", "Polo le ptit mique", "Clacla la GRANDE volleyeuse", "Asul 5", "Asul 2", "Les zippeuses", "Asul 16", "Fred" ]
-  let n = Math.floor(Math.random() * (15 - 9 + 1) + 9); 
+  const toutesLesEquipes = ["Polo", "P'tit Sherlock", "Polo le ptit homme de ménage", "Polo le ptit chef", "Polochon", "Polo apprend à bloquer", "Polo a mal au dos", "Poli", "Polo le ptit mique", "Clacla la GRANDE volleyeuse", "Asul 5", "Asul 2", "Les zippeuses", "Asul 16", "Fred", "Asul 1", "Asul 3", "Asul 7", "Asul 9", "Asul X"]
   shuffleArray(toutesLesEquipes); 
-  equipesSelectionnees = toutesLesEquipes.slice(0,n); 
+  equipesSelectionnees = toutesLesEquipes.slice(0,16); 
   equipesSelectionnees.forEach(nomEquipe => {
     ajouterLiEquipe(nomEquipe); 
   });
@@ -115,7 +113,7 @@ function test(){
 function ajouterLiEquipe(nomEquipe){
   let ul = document.getElementById("list-equipes");  
   let nombreEquipes = ul.getElementsByTagName("li").length;
-  if(nomEquipe != "" && nombreEquipes <15)
+  if(nomEquipe != "" && nombreEquipes <16)
   {
     let li = document.createElement("li");
     li.setAttribute("contentEditable", true); 
