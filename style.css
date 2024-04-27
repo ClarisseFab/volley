@@ -36,19 +36,17 @@ p{
   font-weight:bold;
 }
 
-#equipes{
-    border: solid; 
-    padding: 20px; 
-    margin: 15px; 
+#equipes{ 
     background-image: url(ballon2.jpg); 
     background-position: center; 
     background-size: cover; 
     background-attachment: fixed;
 }
 
-#resultats, #classement{
-    border: dashed; 
+#resultats, #classement, #equipes{
+    border: solid; 
     margin: 15px; 
+    padding: 20px; 
 }
 
 h2{
