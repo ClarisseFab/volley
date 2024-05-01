@@ -10,7 +10,7 @@ function ajoutEquipe() {
   let listLi = document.getElementById("list-equipes").getElementsByTagName("li");
   let arrayEquipes = [];
   for(var j=0;j<listLi.length;j++){
-    arrayEquipes.push(listLi[j].innerHTML); 
+    arrayEquipes.push(listLi[j].innerText); 
   }
   return arrayEquipes;
 }
@@ -119,5 +119,13 @@ function ajouterLiEquipe(nomEquipe){
     li.setAttribute("contentEditable", true); 
     li.appendChild(document.createTextNode(nomEquipe));
     ul.appendChild(li);
+    let buttonSupprimer = document.createElement("button");
+    buttonSupprimer.setAttribute("class","fa fa-times");
+    li.appendChild(buttonSupprimer);
+    buttonSupprimer.addEventListener("click", function() {
+      this.parentElement.remove();
+    })
   }
 }
+
+
