@@ -116,8 +116,10 @@ function ajouterLiEquipe(nomEquipe){
   if(nomEquipe != "" && nombreEquipes <16)
   {
     let li = document.createElement("li");
-    li.setAttribute("contentEditable", true); 
-    li.appendChild(document.createTextNode(nomEquipe));
+    let span = document.createElement("span");
+    span.setAttribute("contentEditable", true);
+    span.appendChild(document.createTextNode(nomEquipe));
+    li.appendChild(span); 
     ul.appendChild(li);
     let buttonSupprimer = document.createElement("button");
     buttonSupprimer.setAttribute("class","fa fa-times");
